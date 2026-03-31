@@ -1,35 +1,28 @@
-/* BREAKPOINTS
-mobile-first base: 320px and up (default)
-@media (min-width: 600px)  = tablet
-@media (min-width: 1024px) = desktop
-============================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap'); 
 
 :root {
   --color-primary: #1a1a2e;  
   --color-secondary: #16213e; 
   --color-accent: #e8d5b7;    
   --color-text: #1a1a1a;      
+  --special-color: #ffffff;
   --color-muted: #666666;
-  --color-surface: #f5f4f0;
-  
-  --font-body: 'Lora', Georgia, serif;
-  --font-heading: 'Playfair Display', serif;
+  --color-surface: #70C3FF;
+  --font-body: 'Lora', Georgia, serif; 
+  --font-heading: 'Playfair Display', serif; 
   
   --space-sm: 0.5rem;
   --space-md: 1.5rem;
   --space-lg: 3rem;
 }
 
-/* CSS Reset [cite: 32] */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%; /* Makes 1rem = 10px [cite: 32] */
-}
+  font-size: 62.5%; }
 
 body {
   margin: 0;
@@ -39,94 +32,91 @@ body {
   background-color: var(--color-surface);
 }
 
-/* --- Task 2: Typography & Visibility Fixes --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--special-color);
+  margin-bottom: var(--space-md);
+}
+
+h1 { font-size: 3.2rem; line-height: 1.2; }
+h2 { font-size: 2.6rem; line-height: 1.3; }
+h3 { font-size: 2.0rem; line-height: 1.4; }
+h4 { font-size: 1.8rem; line-height: 1.5; }
+
+p, blockquote {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+small, figcaption, caption {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
 header {
   background-color: var(--color-primary);
-  /* FIX: Explicitly set text to surface color for contrast */
-  color: var(--color-surface); 
+  color: var(--color-secondary);
   padding: var(--space-lg);
-  text-align: center;
 }
 
-header h1 {
-  color: var(--color-accent); /* Make the name pop against the dark blue */
-  font-size: 3.5rem;
-  margin: 0;
-}
-
-header p {
-  color: var(--color-surface);
-  font-size: 1.8rem;
-  opacity: 0.9;
-}
-
-/* --- Task 2: Landmark Styling  --- */
 nav {
   background-color: var(--color-secondary);
-  padding: var(--space-md);
+  padding: var(--space-sm);
 }
 
 main {
+  background-color: var(--color-surface); 
   padding: var(--space-lg);
-  background-color: #ffffff; /* Clean white for the main content area */
 }
 
 footer {
   background-color: var(--color-primary);
-  color: var(--color-accent);
-  padding: var(--space-lg);
+  color: var(--color-surface);
+  padding: var(--space-md);
   text-align: center;
 }
-
-/* --- Task 2: Box Model Proofs (with required comments) [cite: 72] --- */
-
-/* 1. Nav Links: Using PADDING to increase clickable area [cite: 72] */
-nav a {
-  padding: var(--space-sm) var(--space-md);
-  margin-right: var(--space-sm);
-  border-radius: 0.4rem; /* Requirement [cite: 73] */
-  display: inline-block;
-}
-
-/* 2. Sections: Using PADDING for internal breathing room [cite: 72] */
 section {
-  padding: var(--space-md) 0;
+  padding: var(--space-lg);
 }
 
-/* 3. Images: Using MARGIN to separate from text and BORDER for framing [cite: 72] */
 img {
   margin: var(--space-md) 0;
-  border: 3px solid var(--color-accent);
-  border-radius: 0.8rem;
-  max-width: 100%;
-  height: auto;
+  border: 2px solid var(--color-accent); 
+  border-radius: 0.8rem; 
 }
 
-/* 4. Blockquotes: Using PADDING and BORDER for visual distinction [cite: 72] */
+
+nav a {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0.4rem; 
+}
+
 blockquote {
   border-left: 5px solid var(--color-accent);
-  padding: var(--space-sm) var(--space-md);
+  padding-left: var(--space-md);
   margin: var(--space-md) 0;
-  background: #eee;
 }
 
-/* 5. Figures: Using MARGIN to center or offset content [cite: 72] */
-figure {
-  margin: var(--space-lg) 0;
-  text-align: left;
-}
 
-/* --- Task 2: Link States [cite: 73] --- */
-nav a:link { color: var(--color-surface); text-decoration: none; }
-nav a:visited { color: var(--color-accent); }
-nav a:hover { 
-  background-color: var(--color-accent); 
-  color: var(--color-primary); 
-}
-nav a:active { transform: translateY(2px); }
-
-/* --- Task 2: Visual Polish [cite: 76] --- */
-.card, fieldset {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Add depth requirement [cite: 76] */
+fieldset {
   border: 1px solid var(--color-accent);
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+  border-radius: 1rem; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+
+a:link { color: var(--color-primary); text-decoration: none; }
+a:visited { color: var(--color-muted); }
+a:hover { color: var(--color-accent); background-color: var(--color-secondary); }
+a:active { color: var(--color-surface); background-color: var(--color-primary); }
+
+button {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0.8rem; 
+  border: none;
+  background-color: var(--color-accent);
+  cursor: pointer;
 }
