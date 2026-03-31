@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+</head>
+<body>
+<nav>
+<ul>
+     <a href="index.html">Home</a>
+     <a href="about.html">About Me</a>
+     <a href="skills.html">My Skill</a>
+     <a href="academic.html">Academic Record</a>
+     <a href="projects.html">My Projects</a>
+     <a href="contact.html">Contact Me</a>
+</ul>
+</nav>
+<section id="contact" style="padding: 20px; border-top: 2px solid #333;">
+    <h2 style="color: navy;">Contact Me</h2>
+    
+    <form action="#" method="post">
+        <fieldset style="border: 2px solid #555; padding: 15px;">
+            <legend><strong>Send a Message</strong></legend>
+
+            <p>
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" 
+                       placeholder="Ahmad Al-Faateh" required maxlength="50"
+                       style="border: 1px solid #999; padding: 5px;">
+            </p>
+
+            <p>
+                <label for="user-email">Email Address:</label><br>
+                <input type="email" id="user-email" name="user-email" 
+                       placeholder="example@mail.com" required>
+            </p>
+
+            <p>
+                <label for="experience">Years of Experience (0-10):</label><br>
+                <input type="number" id="experience" name="experience" min="0" max="10">
+            </p>
+
+            <p>
+                <label for="avail-date">Earliest Start Date:</label><br>
+                <input type="date" id="avail-date" name="avail-date">
+            </p>
+
+            <p>
+                <label for="subject">Inquiry Subject:</label><br>
+                <select id="subject" name="subject" style="background-color: #f0f0f0;">
+                    <optgroup label="General">
+                        <option value="collab">Collaboration</option>
+                        <option value="hire">Hiring</option>
+                    </optgroup>
+                    <optgroup label="Technical">
+                        <option value="bug">Bug Report</option>
+                        <option value="feedback">Feedback</option>
+                    </optgroup>
+                </select>
+            </p>
+
+            <p>
+                <label for="urgency">Urgency Level:</label><br>
+                Low <input type="range" id="urgency" name="urgency" min="1" max="5"> High
+            </p>
+
+            <p>Preferred Contact Method:<br>
+                <input type="radio" id="pref-email" name="contact-pref" value="email">
+                <label for="pref-email">Email</label>
+                <input type="radio" id="pref-phone" name="contact-pref" value="phone">
+                <label for="pref-phone">Phone</label>
+                <input type="radio" id="pref-other" name="contact-pref" value="other">
+                <label for="pref-other">Other</label>
+            </p>
+
+            <p>Interests:<br>
+                <input type="checkbox" id="int-web" name="interests" value="web">
+                <label for="int-web">Web Development</label>
+                <input type="checkbox" id="int-ai" name="interests" value="ai">
+                <label for="int-ai">Artificial Intelligence</label>
+                <input type="checkbox" id="int-ds" name="interests" value="ds">
+                <label for="int-ds">Data Science</label>
+            </p>
+
+            <p>
+                <label for="message">Your Message:</label><br>
+                <textarea id="message" name="message" rows="5" cols="40" 
+                          style="font-size: 14px; padding: 10px;"></textarea>
+            </p>
+
+            <button type="submit" style="background-color: navy; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+                Send Message
+            </button>
+        </fieldset>
+    </form>
+</section>
+</body>
+</html>
