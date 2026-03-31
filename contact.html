@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
@@ -16,18 +17,18 @@
      <a href="contact.html">Contact Me</a>
 </ul>
 </nav>
-<section id="contact" style="padding: 20px; border-top: 2px solid #333;">
-    <h2 style="color: navy;">Contact Me</h2>
+<section id="contact">
+    <h2>Contact Me</h2>
     
     <form action="#" method="post">
-        <fieldset style="border: 2px solid #555; padding: 15px;">
+        <fieldset>
             <legend><strong>Send a Message</strong></legend>
 
             <p>
                 <label for="fullname">Full Name:</label><br>
                 <input type="text" id="fullname" name="fullname" 
                        placeholder="Your Name" required maxlength="50"
-                       style="border: 1px solid #999; padding: 5px;">
+                       >
             </p>
 
             <p>
@@ -48,7 +49,7 @@
 
             <p>
                 <label for="subject">Inquiry Subject:</label><br>
-                <select id="subject" name="subject" style="background-color: #f0f0f0;">
+                <select id="subject" name="subject">
                     <optgroup label="General">
                         <option value="collab">Collaboration</option>
                         <option value="hire">Hiring</option>
@@ -86,10 +87,10 @@
             <p>
                 <label for="message">Your Message:</label><br>
                 <textarea id="message" name="message" rows="5" cols="40" 
-                          style="font-size: 14px; padding: 10px;"></textarea>
+                          </textarea>
             </p>
 
-            <button type="submit" style="background-color: navy; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+            <button type="submit">
                 Send Message
             </button>
         </fieldset>
