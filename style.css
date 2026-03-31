@@ -150,3 +150,38 @@ nav a:hover {
 nav a.active {
     border-bottom: 3px solid var(--color-accent); 
 }
+
+.sidebar-layout {
+    display: grid; 
+    grid-template-columns: 1fr 280px; 
+    gap: 2rem; 
+    align-items: start;
+}
+
+.sidebar {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border: 1px solid var(--color-accent);
+    border-radius: 1rem;
+}
+
+.page-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 1.5rem; 
+}
+
+.card {
+    transition: transform 0.2s;
+    background-color: var(--color-accent);
+    padding: var(--space-md);
+    border-radius: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.featured-card {
+    grid-column: span 2; 
+}
