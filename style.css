@@ -78,6 +78,8 @@ header {
     gap: var(--space-md); 
 }
 
+
+
 @media (min-width: 600px) {
     header {
         flex-direction: row; 
@@ -103,6 +105,10 @@ header {
     .sidebar-layout {
         grid-template-columns: 1fr 280px; 
     }
+    nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 nav {
@@ -133,4 +139,55 @@ nav a.active {
 
 .card:hover {
     transform: translateY(-4px);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-muted);
+    border-radius: 0.5rem;
+    font-family: var(--font-body);
+    background-color: var(--special-color);
+    margin-bottom: var(--space-md);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+
+button {
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--color-primary);
+    color: var(--special-color);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(232, 213, 183, 0.2); 
+}
+
+section h1::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 2.5rem;
+    background-color: var(--color-accent);
+    margin-right: var(--space-sm);
+    vertical-align: middle;
+}
+
+.sidebar ul li:first-child {
+    border-top: none;
+}
+
+.sidebar ul li:last-child {
+    border-bottom: none;
 }
