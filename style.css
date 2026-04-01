@@ -45,7 +45,25 @@ img {
   height: auto;   
 }
 
-/* Typography */
+
+blockquote{
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  border-left: 2px var(--color-accent);
+}
+
+p, blockquote {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+small, figcaption, caption {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--special-color);
