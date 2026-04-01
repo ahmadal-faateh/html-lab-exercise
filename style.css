@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lora&display=swap'); 
 
+/* ============================================
+ BREAKPOINTS
+ mobile-first base: 320px and up (default)
+ tablet: @media (min-width: 600px)
+ desktop: @media (min-width: 1024px)
+ ============================================ [cite: 154, 155, 156, 157, 158] */
+
 :root {
   --color-primary: #1a1a2e;  
   --color-secondary: #16213e; 
@@ -7,7 +14,7 @@
   --color-text: #1a1a1a;      
   --special-color: #ffffff;
   --color-muted: #666666;
-  --color-surface: #70C3FF;
+  --color-surface: #70C3FF; 
   --font-body: 'Lora', Georgia, serif; 
   --font-heading: 'Playfair Display', serif; 
   --space-sm: 0.5rem;
@@ -17,11 +24,12 @@
 
 
 *, *::before, *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%; 
+}
 
 body {
   margin: 0;
@@ -31,26 +39,17 @@ body {
   background-color: var(--color-surface);
 }
 
+
+img {
+  max-width: 100%; 
+  height: auto;   
+}
+
+/* Typography */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--special-color);
   margin-bottom: var(--space-md);
-}
-
-h1 { font-size: 3.2rem; line-height: 1.2; }
-h2 { font-size: 2.6rem; line-height: 1.3; }
-h3 { font-size: 2.0rem; line-height: 1.4; }
-h4 { font-size: 1.8rem; line-height: 1.5; }
-
-p, blockquote {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-small, figcaption, caption {
-  font-size: 1.2rem;
-  color: var(--color-muted);
 }
 
 header {
@@ -58,9 +57,52 @@ header {
     color: var(--color-surface);
     padding: var(--space-lg);
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-  
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-md);
+}
+
+.sidebar-layout, .page-cards {
+    display: grid; 
+    grid-template-columns: 1fr;
+    gap: var(--space-md); 
+}
+
+@media (min-width: 600px) {
+    header {
+        flex-direction: row; 
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .page-cards {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .nav-links {
+        flex-direction: row; 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .page-cards {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .sidebar-layout {
+        grid-template-columns: 1fr 280px; 
+    }
 }
 
 nav {
@@ -69,71 +111,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
 }
-
-main {
-  background-color: var(--color-surface); 
-  padding: var(--space-lg);
-}
-
-footer {
-  background-color: var(--color-primary);
-  color: var(--color-surface);
-  padding: var(--space-md);
-  text-align: center;
-}
-section {
-  padding: var(--space-lg);
-}
-
-img {
-  margin: var(--space-md) 0;
-  border: 2px solid var(--color-accent); 
-  border-radius: 0.8rem; 
-}
-
-blockquote {
-  border-left: 5px solid var(--color-accent);
-  padding-left: var(--space-md);
-  margin: var(--space-md) 0;
-}
-
-
-fieldset {
-  border: 1px solid var(--color-accent);
-  padding: var(--space-md);
-  margin-top: var(--space-lg);
-  border-radius: 1rem; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-}
-
-
-button {
-  padding: var(--space-sm) var(--space-md);
-  border-radius: 0.8rem; 
-  border: none;
-  background-color: var(--color-accent);
-  cursor: pointer;
-}
-
-
-.nav-links {
-    display: flex;
-    gap: var(--space-md);
-    flex-wrap: wrap;     
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-.header-text {
-    flex: 1; 
-}
-
 
 nav a {
     transition: color 0.2s, background-color 0.2s; 
@@ -142,33 +120,8 @@ nav a {
     color: var(--color-surface);
 }
 
-nav a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-}
-
 nav a.active {
     border-bottom: 3px solid var(--color-accent); 
-}
-
-.sidebar-layout {
-    display: grid; 
-    grid-template-columns: 1fr 280px; 
-    gap: 2rem; 
-    align-items: start;
-}
-
-.sidebar {
-    background-color: var(--color-surface);
-    padding: var(--space-md);
-    border: 1px solid var(--color-accent);
-    border-radius: 1rem;
-}
-
-.page-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-    gap: 1.5rem; 
 }
 
 .card {
@@ -180,8 +133,4 @@ nav a.active {
 
 .card:hover {
     transform: translateY(-4px);
-}
-
-.featured-card {
-    grid-column: span 2; 
 }
